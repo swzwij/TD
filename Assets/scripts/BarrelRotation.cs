@@ -8,6 +8,6 @@ public class BarrelRotation : MonoBehaviour
 
     void Update()
     {
-        transform.localRotation *= Quaternion.AngleAxis(speed * Time.deltaTime, Vector3.forward);
+        transform.localRotation *= Quaternion.AngleAxis(speed * Time.deltaTime, Vector3.right);
     }
 }
