@@ -5,21 +5,30 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
     public GameObject bullet;
-    public bool SeeEnemy = false;
+    public bool SeeEnemy;
     private float nextActionTime = 0.1f;
     public float period = 0.1f;
 
     void Update()
     {
+        SeeEnemy = false;
 
         if (SeeEnemy == true)
         {
             if (Time.time > nextActionTime)
             {
                 nextActionTime += period;
-                //StartCoroutine(ShootDelay());
                 Shoot();
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("see enemy"); 
+            SeeEnemy = true;
         }
     }
 
