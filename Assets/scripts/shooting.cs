@@ -11,7 +11,7 @@ public class shooting : MonoBehaviour
 
     void Update()
     {
-        SeeEnemy = false;
+        
 
         if (SeeEnemy == true)
         {
@@ -21,6 +21,8 @@ public class shooting : MonoBehaviour
                 Shoot();
             }
         }
+
+        SeeEnemy = false;
     }
 
     private void OnTriggerStay(Collider other)
