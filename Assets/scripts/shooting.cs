@@ -6,20 +6,18 @@ public class shooting : MonoBehaviour
 {
     public GameObject bullet;
     public bool SeeEnemy;
-    private float nextActionTime = 0.1f;
-    public float period = 0.1f;
+    public Transform firepoint;
+    public float fireRate = 0.1F;
+    private float nextFire = 0.0F;
 
     void Update()
     {
-        
-
-        if (SeeEnemy == true)
+        if (SeeEnemy == true && Time.time > nextFire)
         {
-            if (Time.time > nextActionTime)
-            {
-                nextActionTime += period;
-                Shoot();
-            }
+
+            nextFire = Time.time + fireRate;
+            Shoot();
+           
         }
 
         SeeEnemy = false;
@@ -36,6 +34,6 @@ public class shooting : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        Instantiate(bullet, firepoint.position, Quaternion.identity);
     }
 }
