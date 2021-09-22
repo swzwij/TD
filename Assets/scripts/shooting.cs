@@ -27,7 +27,7 @@ public class shooting : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("see enemy"); 
+            //Debug.Log("see enemy"); 
             SeeEnemy = true;
         }
     }

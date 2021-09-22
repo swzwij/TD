@@ -9,21 +9,23 @@ public class cameramanager : MonoBehaviour
 
     void Start()
     {
-        Cam1.camera.enabled = true;
-        Cam2.camera.enabled = false;
+        Cam1.GetComponent<Camera>().enabled = true;
+        Cam2.GetComponent<Camera>().enabled = false;
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Keypad1))
         {
-            Cam1.camera.enabled = false;
-            Cam2.camera.enabled = true;
+            //Debug.Log("pressed 1");
+            Cam1.GetComponent<Camera>().enabled = false;
+            Cam2.GetComponent<Camera>().enabled = true;
         }
         else if (Input.GetKey(KeyCode.Keypad2))
         {
-            Cam2.camera.enabled = false;
-            Cam1.camera.enabled = true;
+            //Debug.Log("Pressed 2");
+            Cam2.GetComponent<Camera>().enabled = false;
+            Cam1.GetComponent<Camera>().enabled = true;
         }
     }
 }

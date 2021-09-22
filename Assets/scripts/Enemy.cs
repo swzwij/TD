@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
             health = health - 1;
         }
     }
