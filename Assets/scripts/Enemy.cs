@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
-    public int speed = 1;
+    public float speed = 1;
 
     public int BulletDmg = 3;
     public int SuperBulletDmg = 5;
@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
             health = health - SuperBulletDmg;
         }
 
-        if (other.gameObject.tag == "EndPoint")
+        if (other.gameObject.tag == "EndPoint") 
         {
             GameObject UI = GameObject.Find("GameManager");
             UImanaager uimanager = UI.GetComponent<UImanaager>();
