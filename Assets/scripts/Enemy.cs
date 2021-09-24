@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public int speed = 1;
 
+    public int BulletDmg = 3;
+    public int SuperBulletDmg = 5;
+
     public GameObject HealthBar1;
     public GameObject HealthBar2;
     public GameObject HealthBar3;
@@ -23,6 +26,12 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0)
         {
+
+            GameObject UI = GameObject.Find("GameManager");
+            UImanaager uimanager = UI.GetComponent<UImanaager>();
+            uimanager.currentkills += 1;
+
+
             Destroy(gameObject);
         }
 
@@ -49,13 +58,23 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             //Debug.Log("Hit");
-            health = health - 3;
+            health = health - BulletDmg;
         }
 
         if (other.gameObject.tag == "SuperBullet")
         {
             //Debug.Log("Hit");
-            health = health - 5;
+            health = health - SuperBulletDmg;
+        }
+
+        if (other.gameObject.tag == "EndPoint")
+        {
+            GameObject UI = GameObject.Find("GameManager");
+            UImanaager uimanager = UI.GetComponent<UImanaager>();
+            uimanager.CurrentMana -= 50;
+
+            Destroy(gameObject);
+
         }
     }
     
