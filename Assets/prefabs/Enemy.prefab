@@ -382,6 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 1
+  BulletDmg: 3
+  SuperBulletDmg: 5
   HealthBar1: {fileID: 1549294601013249415}
   HealthBar2: {fileID: 7833685169583543992}
   HealthBar3: {fileID: 7325223548588237312}
