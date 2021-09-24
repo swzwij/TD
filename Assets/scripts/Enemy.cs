@@ -51,6 +51,12 @@ public class Enemy : MonoBehaviour
             //Debug.Log("Hit");
             health = health - 3;
         }
+
+        if (other.gameObject.tag == "SuperBullet")
+        {
+            //Debug.Log("Hit");
+            health = health - 5;
+        }
     }
     
 }

@@ -29,5 +29,11 @@ public class bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.gameObject.tag == "Portal")
+        {
+            //Debug.Log("Bullet hit portal");
+            Destroy(gameObject);
+        }
     }
 }
