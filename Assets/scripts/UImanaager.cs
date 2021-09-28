@@ -14,6 +14,8 @@ public class UImanaager : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(addHealth());
+
         Mana.text = "Mana : " + CurrentMana;
         kills.text = "Kills : " + currentkills;
     }
@@ -33,5 +35,21 @@ public class UImanaager : MonoBehaviour
     {
         Time.timeScale = 0;
         LossScreen.SetActive(true);
+    }
+
+    IEnumerator addHealth()
+    {
+        while (true)
+        {
+            if (CurrentMana < 1000)
+            {
+                CurrentMana += 1;
+                yield return new WaitForSeconds(1);
+            }
+            else
+            { 
+                yield return null;
+            }
+        }
     }
 }

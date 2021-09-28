@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
             GameObject UI = GameObject.Find("GameManager");
             UImanaager uimanager = UI.GetComponent<UImanaager>();
             uimanager.currentkills += 1;
+            
+            if (uimanager.CurrentMana < 990)
+            {
+                uimanager.CurrentMana += 10;
+            }
 
 
             Destroy(gameObject);
