@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public int speed;
-
+ 
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(5f);
@@ -17,9 +17,10 @@ public class bullet : MonoBehaviour
         StartCoroutine(SelfDestruct());
     }
 
-    // Update is called once per frame
+    // Update is  once per frame
     void Update()
     {
+        
         transform.position += Vector3.forward * speed * Time.deltaTime; 
     }
 

@@ -5,19 +5,24 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
     public GameObject bullet;
-    public bool SeeEnemy;
+    public bool SeeEnemy = false;
     public Transform firepoint;
     public float fireRate = 0.1F;
     private float nextFire = 0.0F;
 
+    void Start()
+    {
+        nextFire = Time.time;
+    }
+
     void Update()
     {
-        if (SeeEnemy == true && Time.time > nextFire)
-        {
 
+
+        if (SeeEnemy && Time.time > nextFire)
+        {
             nextFire = Time.time + fireRate;
             Shoot();
-           
         }
 
         SeeEnemy = false;

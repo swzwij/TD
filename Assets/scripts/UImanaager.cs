@@ -7,7 +7,7 @@ public class UImanaager : MonoBehaviour
 {
     public Text kills;
     public Text Mana;
-    public int CurrentMana = 1000;
+    public int CurrentMana = 300;
     public int currentkills = 0;
 
     public GameObject LossScreen;
